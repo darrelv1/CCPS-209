@@ -56,6 +56,18 @@ public class main {
 			  
 			  }
 	
+	  	public static int countInversions(int[] arr) {
+	  		int n = arr.length;
+	  		int countinv = 0;
+	  		for (int i = 0 ; i < n-1; i++) {
+	  			for(int y = i +1; y < n;y++) {
+	  				if (arr[i] > arr[y]) {countinv += 1;}
+	  			}
+	  		}return countinv;
+	  		
+	  		
+	  		
+	  	}
 	  	
 	  
 	  
@@ -63,10 +75,13 @@ public class main {
 	 	public static void main (String[] args) {
 			System.out.println("Hello World!");
 			int [] random = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+			int [] rrr = {8,4,2,1};
+			
 			System.out.println(Arrays.toString(main.everyOther(random)));
 			System.out.println(main.everyOther(random).length);
 			System.out.println(Arrays.deepToString((main.createZigZag(4, 5, 4))));
 			System.out.println(2%2);
+			System.out.println(countInversions(rrr));
 			
 }
 }
