@@ -24,12 +24,49 @@ public class main {
 		}
 		}Arrays.toString(arrN);return arrN;
 		}
+	  
+	  public static int[][] createZigZag(int rows,int cols,int start){
+		  int [][] arr = new int[rows][cols];
+		  int value = start -1;
+		  for (int row = 0; row < rows ;++row) {
+			  System.out.println("value inside outer loop:  " + value);
+			  System.out.println("row inside outer loop:  " + row);
+			  float odd = row % 2;
+			  if (odd == 0){
+			  for (int col = 0 ;col < cols; col++) {
+					  value += 1;
+					  arr[row][col]= value;
+					  System.out.println("value inside nested loop:  " + value);
+					  System.out.println("column inside nested loop:  " + col);
+				  } 
+			  }
+			  else if (odd != 0) {
+				  for (int col = (cols -1) ;col >= 0 ; col--) {	
+					  System.out.println("value inside ELSE IF  " + value);
+					  System.out.println("column inside ELSE IF  " + col);
+					  System.out.println("ROW inside ELSE IF  " + row);
+					  value += 1;
+					  arr[row][col]= value;
+
+				   }
+				  }
+		  }
+		return arr;
+		
+			  
+			  }
+	
 	  	
+	  
+	  
+	  
 	 	public static void main (String[] args) {
 			System.out.println("Hello World!");
 			int [] random = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
 			System.out.println(Arrays.toString(main.everyOther(random)));
 			System.out.println(main.everyOther(random).length);
+			System.out.println(Arrays.deepToString((main.createZigZag(4, 5, 4))));
+			System.out.println(2%2);
 			
 }
 }
